@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form method = 'POST'>
+    {% csrf_token %}
+    <button onclick="like()" type='submit' id='btn' name='like' value='{{likes}}'>like</button>
+    
+<button onclick="like()"  type='submit' id='btn' name='dislike' value='0'>dislike</button>
+<div id ="content" data-done='{{likes}}'>
+<span id="content-span"></span>
+</div>
+</form>
+
+
+<script>
+ function like() {
+    console.log('hello');
+    document.getElementById("btn").value = Number(document.getElementById("btn").value)+1;
+    document.getElementById("content").innerHTML= content.getAttribute('data-done')
+    console.log(document.getElementById("btn").value);
+} 
+</script>
+
+</body>
+</html>
